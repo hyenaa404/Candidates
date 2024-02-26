@@ -33,17 +33,22 @@ public class Console {
 
     public static void main(String[] args) {
         Console cs = new Console();
-        int option = Menu.chooseInputOption();
+        int option;
         while (true) {
+        option = Menu.chooseInputOption();
             switch (option) {
-                case 1 ->
+                case 1 ->{
                     cs.inputPerson(1);
-                case 2 ->
+                }
+                case 2 ->{
                     cs.inputPerson(2);
-                case 3 ->
+                }
+                case 3 ->{
                     cs.inputPerson(3);
-                case 4 ->
+                }
+                case 4 ->{
                     cs.searchList();
+                }
                 case 5 -> {
                     System.out.println("You selected to exit the program.");
                     System.exit(0);
@@ -66,29 +71,28 @@ public class Console {
     }
 
     public void inputPerson(int n) {
-        Scanner sc = new Scanner(System.in);
-        int option;
+        int op;
         System.out.print("Enter id: ");
         id = Input.inputId();
-//            System.out.print("Enter first name: ");
-//            firstName = Input.inputName();
-//            System.out.print("Enter last name: ");
-//            lastName = Input.inputName();
-//            System.out.print("Enter phone number: ");
-//            phone = Input.inputPhoneNumber();
-//            System.out.print("Enter email: ");
-//            email = Input.inputEmail();
-//            System.out.print("Enter year of birth: ");
-//            birthday = Input.inputBithYear();
-//            System.out.print("Enter address: ");
-//            address = Input.inputString();
+            System.out.print("Enter first name: ");
+            firstName = Input.inputName();
+            System.out.print("Enter last name: ");
+            lastName = Input.inputName();
+            System.out.print("Enter phone number: ");
+            phone = Input.inputPhoneNumber();
+            System.out.print("Enter email: ");
+            email = Input.inputEmail();
+            System.out.print("Enter year of birth: ");
+            birthday = Input.inputBithYear();
+            System.out.print("Enter address: ");
+            address = Input.inputString();
         switch (n) {
             case 1 -> {
-//                    type = "Experience";
-//                    System.out.print("Enter year of experience: ");
-//                    yearEx = Input.inputYearEx();
-//                    System.out.println("Enter proffesional skill: ");
-//                    proSkill = Input.inputString();
+                    type = "Experience";
+                    System.out.print("Enter year of experience: ");
+                    yearEx = Input.inputYearEx();
+                    System.out.println("Enter proffesional skill: ");
+                    proSkill = Input.inputString();
                 Person ex = new Experience(yearEx, proSkill, id, firstName, lastName, birthday, address, phone, email, type);
                 personList.addPerson(ex);
             }
@@ -115,8 +119,8 @@ public class Console {
             }
         }
         System.out.println("Do you want to continue?\n1.Yes\n2.No");
-        option = Input.inputOption(1, 2);
-        if (option == 1) {
+        op = Input.inputOption(1, 2);
+        if (op == 1) {
             inputPerson(n);
         }
     }
